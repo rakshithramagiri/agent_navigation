@@ -115,7 +115,7 @@ class DQN_AGENT:
 
 
 class REPLAY_MEMORY:
-    def __init__(self, action_size, buffer_size, seed):
+    def __init__(self, action_size, buffer_size, batch_size, seed):
         """
         Initialize replay memory buffer to defaults on creation.
 
@@ -125,6 +125,7 @@ class REPLAY_MEMORY:
         """
         self.action_size = action_size
         self.seed = random.seed(seed)
+        self.batch_size = batch_size
         self.memory = deque(maxlen=buffer_size)
         self.experience = namedtuple('experience', ['state', 'action', 'reward', 'next_state', 'done'])
 
@@ -148,7 +149,7 @@ class REPLAY_MEMORY:
         """
         Return BATCH_SIZE number of sampled experiences from replay memory.
         """
-        samples = random.choice(self.memory, k=BATCH_SIZE)
+        samples = random.choice(self.memory, k=self.batch_size)
         return samples
 
 

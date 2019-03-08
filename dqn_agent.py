@@ -123,6 +123,8 @@ class REPLAY_MEMORY:
         params :
             action_size    - action space size.
             buffer_size    - replay memory size.
+            batch_size     - batch size of sampled experiences to return.
+            seed           - random generator seed value.
         """
         self.action_size = action_size
         self.seed = random.seed(seed)

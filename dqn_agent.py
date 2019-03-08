@@ -128,8 +128,19 @@ class REPLAY_MEMORY:
         self.experience = namedtuple('experience', ['state', 'action', 'reward', 'next_state', 'done'])
 
 
-    def add(self):
-        pass
+    def add(self, state, action, reward, next_state, done):
+        """
+        Add an experience to replay memory by storing passed values.
+
+        params :
+            state        - current environment state.
+            action       - action chosen by agent in current state.
+            reward       - reward obtained from environment.
+            next_state   - next state of environment, a result of current state-action combination.
+            done         - whether episode is finished or not.
+        """
+        experience = self.experience(state, action, reward, next_state, done)
+        self.memory.append(experience)
 
 
     def sample(self):

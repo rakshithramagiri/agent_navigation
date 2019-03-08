@@ -97,7 +97,17 @@ class DQN_AGENT:
 
 
     def target_network_update(self, learning_network, target_network, TAU):
-        pass
+        """
+        Update target network of DQN Agent to provide fixed targets for
+        learning.
+
+        params :
+            learning_network - weights to use for updating target network.
+            target_network   - target network whose weights to update.
+            TAU              - time steps for updating target network weights.
+        """
+        for learning_params, target_params in zip(learning_network.parameters(), target_network.parameters()):
+            target_params.data.copy_(TAU*learning_params + (1-TAU)*target_params)
 
 
 

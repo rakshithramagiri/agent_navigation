@@ -126,6 +126,7 @@ class REPLAY_MEMORY:
         self.action_size = action_size
         self.seed = random.seed(seed)
         self.batch_size = batch_size
+        self.device = torch.device(DEVICE)
         self.memory = deque(maxlen=buffer_size)
         self.experience = namedtuple('experience', ['state', 'action', 'reward', 'next_state', 'done'])
 

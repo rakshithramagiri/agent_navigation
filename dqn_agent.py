@@ -115,8 +115,17 @@ class DQN_AGENT:
 
 
 class REPLAY_MEMORY:
-    def __init__(self):
-        pass
+    def __init__(self, action_size, buffer_size):
+        """
+        Initialize replay memory buffer to defaults on creation.
+
+        params :
+            action_size    - action space size.
+            buffer_size    - replay memory size.
+        """
+        self.action_size = action_size
+        self.memory = deque(maxlen=buffer_size)
+        self.experience = namedtuple('experience', ['state', 'action', 'reward', 'next_state', 'done'])
 
 
     def add(self):

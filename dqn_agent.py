@@ -29,8 +29,8 @@ class DQN_AGENT:
         self.time_steps = 0
         self.device = torch.device('cpu') # CPU's are faster for Unity Environments
 
-        self.learning_network = DQN_MODEL()
-        self.target_network = DQN_MODEL()
+        self.learning_network = DQN_MODEL().to(self.device)
+        self.target_network = DQN_MODEL().to(self.device)
         self.replay_memory = REPLAY_MEMORY()
         self.loss_function = torch.nn.MSELoss()
         self.optimizer = torch.optim.Adam(self.learning_network.parameters(), lr=LR)

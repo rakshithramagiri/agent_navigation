@@ -145,3 +145,10 @@ class REPLAY_MEMORY:
 
     def sample(self):
         pass
+
+
+    def __len__(self):
+        """
+        Return length of replay memory.
+        """
+        return len(self.memory)

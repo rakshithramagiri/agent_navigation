@@ -57,15 +57,24 @@ class DQN_AGENT:
         self.target_network_update(self.learning_network, self.target_network, TAU)
 
 
-    def act(self, state):
+    def act(self, state, eps):
         """
         Take in enviroment state and return action to be taken by agent based
         on current policy followed by agent.
 
         params :
-            state - current enviroment state
+            state - current enviroment state (numpy.ndarray).
+            eps   - epsilon value.
         """
-        pass
+        state = torch.from_numpy(state).float().to(self.device)
+        self.learning_network.eval()
+        with torch.no_grad():
+            action_values = self.learning_network(state)
+        self.learning_network.train()
+
+        if random.random() > eps:
+            return np.argmax(action_values)
+        return np.random.choice(np.arange(self.action_size))
 
 
     def learn(self):

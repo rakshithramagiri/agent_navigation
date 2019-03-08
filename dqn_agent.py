@@ -1,6 +1,7 @@
 import random
 import torch
 import numpy as np
+from collections import namedtuple, deque
 
 from model import DQN_MODEL
 

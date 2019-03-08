@@ -116,17 +116,15 @@ class DQN_AGENT:
 
 
 class REPLAY_MEMORY:
-    def __init__(self, action_size, buffer_size, batch_size, seed):
+    def __init__(self, buffer_size, batch_size, seed):
         """
         Initialize replay memory buffer to defaults on creation.
 
         params :
-            action_size    - action space size.
             buffer_size    - replay memory size.
             batch_size     - batch size of sampled experiences to return.
             seed           - random generator seed value.
         """
-        self.action_size = action_size
         self.seed = random.seed(seed)
         self.batch_size = batch_size
         self.device = torch.device(DEVICE)

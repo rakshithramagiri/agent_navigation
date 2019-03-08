@@ -147,7 +147,7 @@ class REPLAY_MEMORY:
         """
         Return BATCH_SIZE number of sampled experiences from replay memory.
         """
-        samples = random.choice(self.memory, k=BATCH_SIZE)]
+        samples = random.choice(self.memory, k=BATCH_SIZE)
         return samples
 
 

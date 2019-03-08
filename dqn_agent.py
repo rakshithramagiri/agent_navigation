@@ -25,6 +25,7 @@ class DQN_AGENT:
         self.state_size = state_size
         self.action_size = action_size
         self.time_steps = 0
+        self.device = torch.device('cpu') # CPU's are faster for Unity Environments
 
         self.learning_network = DQN_MODEL()
         self.target_network = DQN_MODEL()

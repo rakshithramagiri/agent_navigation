@@ -54,7 +54,7 @@ class DQN_AGENT:
 
         if self.time_steps % UPDATE_EVERY == 0:
             experiences = self.replay_memory.sample()
-            self.learn(experiences)
+            self.learn(experiences, GAMMA)
 
         self.target_network_update(self.learning_network, self.target_network, TAU)
 

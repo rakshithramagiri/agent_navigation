@@ -66,7 +66,7 @@ class DQN_AGENT:
             state - current enviroment state (numpy.ndarray).
             eps   - epsilon value.
         """
-        state = torch.from_numpy(state).float().to(self.device)
+        state = torch.from_numpy(state).float().unsqueeze(0).to(self.device)
         self.learning_network.eval()
         with torch.no_grad():
             action_values = self.learning_network(state)

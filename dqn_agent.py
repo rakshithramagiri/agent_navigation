@@ -31,8 +31,8 @@ class DQN_AGENT:
         self.device = torch.device(DEVICE) # CPU's are faster for Unity Environments
         self.seed = random.seed(seed)
 
-        self.learning_network = DQN_MODEL().to(self.device)
-        self.target_network = DQN_MODEL().to(self.device)
+        self.learning_network = DQN_MODEL(self.state_size, self.action_size, seed).to(self.device)
+        self.target_network = DQN_MODEL(self.state_size, self.action_size, seed).to(self.device)
         self.replay_memory = REPLAY_MEMORY(BUFFER_SIZE, BATCH_SIZE, seed)
         self.loss_function = torch.nn.MSELoss()
         self.optimizer = torch.optim.Adam(self.learning_network.parameters(), lr=LR)

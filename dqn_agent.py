@@ -77,8 +77,23 @@ class DQN_AGENT:
         return np.random.choice(np.arange(self.action_size))
 
 
-    def learn(self):
-        pass
+    def learn(self, experiences, GAMMA):
+        """
+        Learn from sampled experiences and update learning_network accordingly.
+
+        params :
+            experiences - sampled experiences from replay memory.
+            GAMMA       - gamma value (importance given to future rewards).
+        """
+        states, actions, rewards, next_states, dones = experiences
+        targets = self.target_network(next_states).max(1)[0]
+        targets = rewards + (GAMMA * targets * (1-dones))
+        chosen_actions = self.learning_network(states).gather(1, actions)
+
+        loss = self.loss_function(chosen_actions, targets)
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
 
 
     def target_network_update(self, learning_network, target_network, TAU):

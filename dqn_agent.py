@@ -110,7 +110,7 @@ class DQN_AGENT:
             TAU              - time steps for updating target network weights.
         """
         for learning_params, target_params in zip(learning_network.parameters(), target_network.parameters()):
-            target_params.data.copy_(TAU*learning_params + (1-TAU)*target_params)
+            target_params.data.copy_(TAU*learning_params.data + (1-TAU)*target_params.data)
 
 
 

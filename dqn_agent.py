@@ -7,6 +7,7 @@ from model import DQN_MODEL
 
 
 BUFFER_SIZE = int(1e5)
+BATCH_SIZE = 64
 LR = 3e-4
 TAU = 1e3
 GAMMA = 0.99

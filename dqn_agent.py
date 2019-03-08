@@ -33,7 +33,7 @@ class DQN_AGENT:
 
         self.learning_network = DQN_MODEL().to(self.device)
         self.target_network = DQN_MODEL().to(self.device)
-        self.replay_memory = REPLAY_MEMORY()
+        self.replay_memory = REPLAY_MEMORY(BUFFER_SIZE, BATCH_SIZE, seed)
         self.loss_function = torch.nn.MSELoss()
         self.optimizer = torch.optim.Adam(self.learning_network.parameters(), lr=LR)
 

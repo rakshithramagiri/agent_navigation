@@ -144,7 +144,11 @@ class REPLAY_MEMORY:
 
 
     def sample(self):
-        pass
+        """
+        Return BATCH_SIZE number of sampled experiences from replay memory.
+        """
+        samples = random.choice(self.memory, k=BATCH_SIZE)]
+        return samples
 
 
     def __len__(self):

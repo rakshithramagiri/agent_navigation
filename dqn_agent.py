@@ -152,7 +152,12 @@ class REPLAY_MEMORY:
         Return BATCH_SIZE number of sampled experiences from replay memory.
         """
         samples = random.choice(self.memory, k=self.batch_size)
-        return samples
+        states = torch.from_numpy(np.vstack([e.state for e in samples if e is not None])).float().to(self.device)
+        actions = torch.from_numpy(np.vstack([e.action for e in samples if e is not None])).long().to(self.device)
+        rewards = torch.from_numpy(np.vstack([e.reward for e in samples if e is not None])).float().to(self.device)
+        next_states = torch.from_numpy(np.vstack([e.next_state for e in samples if e is not None])).float().to(self.device)
+        dones = torch.from_numpy(np.vstack([e.done for e in samples if e is not None]).astype(np.uint8)).float().to(self.device)
+        return (states, actions, rewards, next_states, dones)
 
 
     def __len__(self):

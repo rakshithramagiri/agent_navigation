@@ -56,8 +56,6 @@ class DQN_AGENT:
             experiences = self.replay_memory.sample()
             self.learn(experiences, GAMMA)
 
-        self.target_network_update(self.learning_network, self.target_network, TAU)
-
 
     def act(self, state, eps):
         """

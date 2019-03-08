@@ -30,3 +30,13 @@ class DQN_MODEL(torch.nn.Module):
         self.softmax = torch.nn.Softmax(dim=1)
 
 
+    def forward(self, state):
+        """
+        Takes current state as input and returns action selection probabilities.
+
+        params :
+            state - current enviroment state.
+        """
+        action_values = self.fc(state)
+        action_values = self.softmax(action_values)
+        return action_values

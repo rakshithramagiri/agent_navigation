@@ -22,9 +22,9 @@ class DQN_MODEL(torch.nn.Module):
         self.fc = torch.nn.Sequential(
             torch.nn.Linear(self.state_size, self.hidden),
             torch.nn.ReLU(),
-            torch.nn.Linear(self.hidden, self.hidden),
+            torch.nn.Linear(self.hidden, self.hidden*2),
             torch.nn.ReLU(),
-            torch.nn.Linear(self.hidden, self.hidden),
+            torch.nn.Linear(self.hidden*2, self.hidden),
             torch.nn.ReLU(),
             torch.nn.Linear(self.hidden, self.action_size)
         )

@@ -6,7 +6,7 @@ from collections import namedtuple, deque
 from model import DQN_MODEL
 
 
-DEVICE = 'cpu'
+DEVICE = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 BUFFER_SIZE = int(1e5)
 BATCH_SIZE = 64
 LR = 5e-3

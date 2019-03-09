@@ -100,10 +100,10 @@ class DQN_AGENT:
         loss.backward()
         self.optimizer.step()
 
-        self.target_network_update(self.learning_network, self.target_network, TAU)
+        self.target_network_update(TAU)
 
 
-    def target_network_update(self, learning_network, target_network, TAU):
+    def target_network_update(self, TAU):
         """
         Update target network of DQN Agent to provide fixed targets for
         learning.

@@ -6,7 +6,7 @@ from collections import namedtuple, deque
 from model import DQN_MODEL
 
 
-DEVICE = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+DEVICE = 'cpu' # CPU's are faster for Unity Environments
 BUFFER_SIZE = int(1e5)
 BATCH_SIZE = 64
 LR = 5e-2
@@ -28,7 +28,7 @@ class DQN_AGENT:
         self.state_size = state_size
         self.action_size = action_size
         self.time_steps = 0
-        self.device = torch.device(DEVICE) # CPU's are faster for Unity Environments
+        self.device = torch.device(DEVICE)
         self.seed = random.seed(seed)
 
         self.learning_network = DQN_MODEL(self.state_size, self.action_size, seed).to(self.device)

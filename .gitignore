@@ -1,0 +1,6 @@
+# DIRECTORIES
+__pycache__
+.ipynb_checkpoints
+
+# FILES
+unity-environment.log

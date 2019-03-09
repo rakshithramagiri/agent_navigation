@@ -10,7 +10,7 @@ DEVICE = 'cpu' # CPU's are faster for Unity Environments
 BUFFER_SIZE = int(1e5)
 BATCH_SIZE = 64
 LR = 5e-4
-TAU = 5e-2
+TAU = 5e-3
 GAMMA = 0.99
 UPDATE_EVERY = 4
 

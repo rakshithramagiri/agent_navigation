@@ -10,7 +10,7 @@ DEVICE = 'cpu'
 BUFFER_SIZE = int(1e5)
 BATCH_SIZE = 64
 LR = 5e-3
-TAU = 1e-3
+TAU = 1e-1
 GAMMA = 0.99
 UPDATE_EVERY = 4
 

@@ -75,7 +75,7 @@ class DQN_AGENT:
         self.learning_network.train()
 
         if random.random() > eps:
-            return np.argmax(action_values.data.numpy())
+            return np.argmax(action_values.cpu().data.numpy())
         return random.choice(np.arange(self.action_size))
 
 

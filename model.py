@@ -29,8 +29,6 @@ class DQN_MODEL(torch.nn.Module):
             torch.nn.Linear(self.hidden, self.action_size)
         )
 
-        self.softmax = torch.nn.Softmax(dim=1)
-
 
     def forward(self, state):
         """
@@ -40,5 +38,4 @@ class DQN_MODEL(torch.nn.Module):
             state - current enviroment state.
         """
         action_values = self.fc(state)
-        action_values = self.softmax(action_values)
         return action_values

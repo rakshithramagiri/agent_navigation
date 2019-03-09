@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 class DQN_MODEL(torch.nn.Module):
-    def __init__(self, state_size, action_size, seed, hidden=128):
+    def __init__(self, state_size, action_size, seed, hidden=64):
         """
         Declare and Initialize Deep Neural Net.
 

@@ -22,9 +22,11 @@ class DQN_MODEL(torch.nn.Module):
         self.fc = torch.nn.Sequential(
             torch.nn.Linear(self.state_size, self.hidden),
             torch.nn.ReLU(),
-            torch.nn.Linear(self.hidden, int(self.hidden//4)),
+            torch.nn.Linear(self.hidden, self.hidden),
             torch.nn.ReLU(),
-            torch.nn.Linear(int(self.hidden//4), self.action_size)
+            torch.nn.Linear(self.hidden, self.hidden),
+            torch.nn.ReLU(),
+            torch.nn.Linear(self.hidden, self.action_size)
         )
 
         self.softmax = torch.nn.Softmax(dim=1)

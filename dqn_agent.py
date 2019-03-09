@@ -38,7 +38,7 @@ class DQN_AGENT:
         self.optimizer = torch.optim.Adam(self.learning_network.parameters(), lr=LR)
 
 
-    def step(self, state, action, reward, next_state, done):
+    def step(self, state, action, reward, next_state, done, train=True):
         """
         DQN Agent takes a step and adds the experience to replay memory.
         If condition to learn is satisfied, then agent learns from sampled
@@ -50,13 +50,16 @@ class DQN_AGENT:
             reward       - reward obtained from environment.
             next_state   - next state of environment, a result of current state-action combination.
             done         - whether episode is finished or not.
+            train        - To allow agent to train or just store experiences.
         """
         self.replay_memory.add(state, action, reward, next_state, done)
-        self.time_steps += 1
 
-        if self.time_steps % UPDATE_EVERY == 0 and len(self.replay_memory) > BATCH_SIZE:
-            experiences = self.replay_memory.sample()
-            self.learn(experiences, GAMMA)
+        if train:
+            self.time_steps += 1
+
+            if self.time_steps % UPDATE_EVERY == 0 and len(self.replay_memory) > BATCH_SIZE:
+                experiences = self.replay_memory.sample()
+                self.learn(experiences, GAMMA)
 
 
     def act(self, state, eps):

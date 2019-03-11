@@ -5,7 +5,7 @@ Train intelligent agents to navigate Unity's Bananas environment to pick up **ye
 ## Environment
 
 ### Goal
-The agent must learn to move to as many yellow bananas as possible while avoiding blue bananas.
+The agent must learn to move and collect as many yellow bananas as possible while avoiding blue bananas.
 
 ### Rewards
 Reward function for agent is `+1` for each **yellow** banana collected and `-1` for each **blue** banana collected.
@@ -19,4 +19,4 @@ This is an episodic task. The state space has `37` dimensions and contains the a
 - `3` - turn right.
 
 ### Solved
-Environment is considered as solved, when our agent gets an average score of +13 over 100 consecutive episodes.
+Environment is considered as solved, when our agent gets an average score of `+13` over 100 consecutive episodes.

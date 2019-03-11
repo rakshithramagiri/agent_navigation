@@ -49,3 +49,7 @@ git clone https://github.com/rakshithramagiri/agent_navigation.git
 
 
 ## Instructions
+
+- To train your own agent run all cells of notebook`[TRAIN] agent_navigation.ipynb`.
+
+- To watch demo of a trained agent, run cells in `[DEMO] agent_navigation.ipynb` notebook.

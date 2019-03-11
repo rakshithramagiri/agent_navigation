@@ -86,7 +86,7 @@ Rewards obtained by agent plotted as function of episodes of training is shown b
 
 Orange line represents a rolling mean of rewards for latest 100 episodes.
 
-## Improvements
+## Further Improvements
 
 - **Double DQN** or **Dueling DQN** or **Rainbow** instead of DQN implementation.
 - Implement **Prioritized Replay** sampling rather than random replay sampling.

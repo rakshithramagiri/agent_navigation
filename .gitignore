@@ -1,6 +1,8 @@
 # DIRECTORIES
 __pycache__
 .ipynb_checkpoints
+Banana_Linux
+Banana_Linux_NoVis
 
 # FILES
 unity-environment.log

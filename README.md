@@ -80,4 +80,4 @@ env = UnityEnvironment(file_name= < YOUR UNITY ENV PATH HERE >)
 
 ## Plot of Rewards
 
-![rewards_plot](agent_795.png)
+![rewards_plot](https://raw.githubusercontent.com/rakshithramagiri/agent_navigation/master/assets/agent_795.png)

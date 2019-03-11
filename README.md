@@ -58,3 +58,17 @@ git clone https://github.com/rakshithramagiri/agent_navigation.git
 ```
 env = UnityEnvironment(file_name= < YOUR UNITY ENV PATH HERE >)
 ```
+
+## Algorithm
+- This repo uses **DQN** alogorithm to solve Unity's Banana Collector environment.
+
+- The network architecture used is a simple, fully-connected neural network with 2 hidden layers of sizes, 128 and 256 units. Model definition can be found in `model.py` file.
+
+- Hyperparameter values chosen are as follows :
+
+| Hyperparameter | Value |
+| -------------- | ------ |
+| Learning Rate | 5e-4 |
+| Gamma | 0.99 |
+| Buffer Size | 1e5 |
+| Batch Size | 32 |

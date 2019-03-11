@@ -36,3 +36,10 @@ Environment is considered as solved, when our agent gets an average score of `+1
     (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux_NoVis.zip) to obtain the environment.
 
 3. After download, extract the **zip** file and place extracted folder in the root of **agent_navigation** repo.
+
+4. Install **unityagents** package - `pip install unityagents`
+
+5. Ensure following packages are installed in your environment before proceeding with training or running demo.
+    - PyTorch - [click here](https://pytorch.org/get-started/locally/)
+    - Numpy - `pip install numpy`
+    - Matplotlib - `pip install matplotlib`

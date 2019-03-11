@@ -68,7 +68,12 @@ env = UnityEnvironment(file_name= < YOUR UNITY ENV PATH HERE >)
 
 | Hyperparameter | Value |
 | -------------- | ------ |
-| Learning Rate | 5e-4 |
-| Gamma | 0.99 |
-| Buffer Size | 1e5 |
-| Batch Size | 32 |
+| LR | 5e-4 |
+| GAMMA | 0.99 |
+| BUFFER_SIZE | 1e5 |
+| BATCH_SIZE | 32 |
+| TAU | 5e-3 |
+| UPDATE_EVERY | 4 |
+| SEED | 42 |
+| HIDDEN_LAYERS | [128, 256] |
+| DEVICE | CPU |

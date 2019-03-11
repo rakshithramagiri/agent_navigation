@@ -78,7 +78,7 @@ env = UnityEnvironment(file_name= < YOUR UNITY ENV PATH HERE >)
 | HIDDEN_LAYERS | [128, 256] |
 | DEVICE | CPU |
 
-## Plot of Rewards
+## Rewards Plot
 
 Rewards obtained by agent plotted as function of episodes of training is shown below :
 

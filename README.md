@@ -88,6 +88,6 @@ Orange line represents a rolling mean of rewards for latest 100 episodes.
 
 ## Improvements
 
-- **Double DQN** or **Dueling DQN** or **Rainbow** instead of current DQN implementation.
-- Implement **Prioritized Replay** sampling rather than current random replay sampling.
-- Explore learning from image/visual data as input to agent rather than current vector-based inputs.
+- **Double DQN** or **Dueling DQN** or **Rainbow** instead of DQN implementation.
+- Implement **Prioritized Replay** sampling rather than random replay sampling.
+- Explore learning from image/visual data as input to agent rather than vector-based inputs.

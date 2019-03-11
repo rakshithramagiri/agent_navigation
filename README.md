@@ -80,4 +80,8 @@ env = UnityEnvironment(file_name= < YOUR UNITY ENV PATH HERE >)
 
 ## Plot of Rewards
 
+Rewards obtained by agent plotted as function of episodes of training is shown below :
+
 ![rewards_plot](https://raw.githubusercontent.com/rakshithramagiri/agent_navigation/master/assets/agent_795.png)
+
+Orange line represents a rolling mean of rewards for latest 100 episodes.

@@ -77,3 +77,7 @@ env = UnityEnvironment(file_name= < YOUR UNITY ENV PATH HERE >)
 | SEED | 42 |
 | HIDDEN_LAYERS | [128, 256] |
 | DEVICE | CPU |
+
+## Plot of Rewards
+
+![rewards_plot](agent_795.png)

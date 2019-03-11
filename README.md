@@ -24,6 +24,9 @@ Environment is considered as solved, when our agent gets an average score of `+1
 ## Getting Started
 
 1. Clone this repository to your local machine using `git clone`.
+```
+git clone https://github.com/rakshithramagiri/agent_navigation.git
+```
 
 2. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
     - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
@@ -37,9 +40,12 @@ Environment is considered as solved, when our agent gets an average score of `+1
 
 3. After download, extract the **zip** file and place extracted folder in the root of **agent_navigation** repo.
 
-4. Install **unityagents** package - `pip install unityagents`
+4. Install **unityagents** package in your environment - `pip install unityagents`
 
 5. Ensure following packages are installed in your environment before proceeding with training or running demo.
     - PyTorch - [click here](https://pytorch.org/get-started/locally/)
     - Numpy - `pip install numpy`
     - Matplotlib - `pip install matplotlib`
+
+
+## Instructions

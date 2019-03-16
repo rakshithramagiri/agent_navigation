@@ -60,7 +60,11 @@ env = UnityEnvironment(file_name= < YOUR UNITY ENV PATH HERE >)
 ```
 
 ## Algorithm
-- This project repository uses **DQN** alogorithm to solve Unity's Banana Collector environment.
+**Deep Q Network** (DQN) is a reinforcement learning algorithm that approximates action-value functions by using neural networks as non-linear function approximators. DQN as achieved state-of-the-art performance on many reinforcement learning tasks, which were previously unachievable with traditional RL algorithms either due to infinite state-space or infinite action-space or both.
+
+DQN doesn't require any additional knowledge about the task it's learning to perform. It takes in **state information** as input and outputs **probabilities** of taking each possible action in that state (in case of discrete action-space) or **continuous action values** (in case on continuous action-space).
+
+- This project repository uses **DQN** algorithm to solve Unity's Banana Collector environment.
 
 - The network architecture used is a simple, fully-connected neural network with 2 hidden layers of sizes, 128 and 256 units. Model definition can be found in `model.py` file.
 
